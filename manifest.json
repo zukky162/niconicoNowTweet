@@ -1,0 +1,23 @@
+{
+  "name": "Niconico Now Tweet",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "We can tweet an image of playing now video.",
+  "icons": {
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "Niconico Now Tweet"
+  },
+  "permissions": [
+    "<all_urls>"
+  ]
+}
