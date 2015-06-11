@@ -9,9 +9,15 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
         // 動画の下についてるコントロールパネルの高さ。
         // 本当は自動で取得したいけどやりかたわからぬ。
         var cPanelH = 77;
-        // 中画面の場合はcPanelHを83に設定。こうしないと余白除去がずれる。
+        // 画面のアス比。rateH/rateWの値が処理に影響する。
+        var rateW = 16;
+        var rateH = 9;
+        // 中画面の場合の設定。こうしないと余白除去がずれる。
         var clist = document.body.classList;
-        if(clist && clist.contains("size_medium")) cPanelH = 83;
+        if(clist && clist.contains("size_medium")) {
+            rateW = 672;
+            rateH = 461 - cPanelH;
+        }
         // 1ピクセルを何倍で表示しているか（＝拡大率）
         var zoomer = window.devicePixelRatio;
         // スクショから切り抜く部分を決める
@@ -20,14 +26,14 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
         var width  = rect.width  * zoomer;
         var height = rect.height * zoomer - cPanelH;
         // 余白除去の処理
-        if(height * 16 <= width * 9) {
+        if(height * rateW <= width * rateH) {
             // ぴったり、または横に余白有り
-            var offsetX = (width * 9 - height * 16) / 18.0;
+            var offsetX = (width * rateH - height * rateW) / (rateH * 2.0);
             x += offsetX;
             width -= offsetX * 2;
         } else {
             // 縦に余白有り
-            var offsetY = (height * 16 - width * 9) / 32.0;
+            var offsetY = (height * rateW - width * rateH) / (rateW * 2.0);
             y += offsetY;
             height -= offsetY * 2;
         }
