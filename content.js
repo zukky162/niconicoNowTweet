@@ -1,7 +1,27 @@
 chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
-    if(msg.command == "trimming") {
+/*
+    if(msg.command == "prepare") {
+        var header = document.getElementById("siteHeader");
+        header.style.display = "none";
+
         var player = document.getElementById("nicoplayerContainer");
         var rect   = player.getBoundingClientRect();
+        var dx = rect.left;
+        var dy = rect.top;
+        window.scrollBy(dx, dy);
+
+        sendResponse({dx: dx, dy: dy});
+        return;
+    }
+*/
+
+    if(msg.command == "trimming") {
+        var player = document.getElementById("nicoplayerContainer");
+        if(!player) {
+            return;
+        }
+        var rect   = player.getBoundingClientRect();
+
         var zoomer = window.devicePixelRatio;
 
         var x      = Math.round(rect.left   * zoomer);
@@ -24,5 +44,14 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
                           0, 0,
                           width, height);
         sendResponse(canvas.toDataURL());
+        return;
     }
+/*
+    if(msg.command == "undo") {
+        var header = document.getElementById("siteHeader");
+        header.style.display = "";
+        window.scrollBy(-msg.dx, -msg.dy);
+        return;
+    }
+*/
 });
