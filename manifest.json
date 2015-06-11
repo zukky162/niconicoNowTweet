@@ -5,12 +5,17 @@
   "description": "We can tweet an image of playing now video.",
   "icons": {
   },
+  "web_accessible_resources": [
+    "chrome_ex_oauth.html"
+  ],
   "content_scripts": [{
     "matches": ["<all_urls>"],
     "js": ["content.js"]
   }],
   "background": {
     "scripts": [
+      "chrome_ex_oauthsimple.js",
+      "chrome_ex_oauth.js",
       "background.js"
     ]
   },
