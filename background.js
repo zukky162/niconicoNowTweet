@@ -3,8 +3,8 @@
         'request_url':     'https://twitter.com/oauth/request_token',
         'authorize_url':   'https://twitter.com/oauth/authorize',
         'access_url':      'https://twitter.com/oauth/access_token',
-        'consumer_key':    'nHbl3wTI54uEIlsTH0Qr28mtt',
-        'consumer_secret': '8OpkebpEVaEzB0XUZO2ctvMavCiQQBfMyhYw2ew0zB2fvmQoaz',
+        'consumer_key':    Keys.consumer_key,
+        'consumer_secret': Keys.consumer_secret,
         'oath_scope': '',
         'app_name': ''
     });

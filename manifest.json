@@ -16,6 +16,7 @@
     "scripts": [
       "chrome_ex_oauthsimple.js",
       "chrome_ex_oauth.js",
+      "keys.js",
       "background.js"
     ]
   },
