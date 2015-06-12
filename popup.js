@@ -15,6 +15,11 @@
             chrome.tabs.sendMessage(tab.id, {command: "getTweetText"});
         });
         
+        img.onclick = function() {
+            BG.saveFromUrl(img.src);
+            window.close();
+        };
+
         document.getElementById("btn-tweet").onclick = function() {
             BG.tweetWithImageUrl(textarea.value, img.src);
             window.close();
@@ -29,10 +34,11 @@
                 });
             });
         };
-        
-        document.getElementById("btn-save").onclick = function() {
-            BG.saveFromUrl(img.src);
+
+        document.getElementById("btn-account").onclick = function() {
+            BG.oauth.clearTokens();
             window.close();
         };
+        
     });
 })();
