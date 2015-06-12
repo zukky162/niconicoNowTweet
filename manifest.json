@@ -2,7 +2,7 @@
   "name": "Niconico Now Tweet",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "We can tweet an image of playing now video.",
+  "description": "Tweets with an image displayed Now in your Niconico video.",
   "icons": {
   },
   "web_accessible_resources": [
@@ -21,9 +21,11 @@
     ]
   },
   "browser_action": {
-    "default_title": "Niconico Now Tweet"
+    "default_title": "Niconico Now Tweet",
+    "default_popup": "popup.html"
   },
   "permissions": [
+    "tabs",
     "<all_urls>"
   ]
 }
