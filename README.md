@@ -6,8 +6,8 @@ Chromeで現在表示しているニコニコ動画の画面をそのままキ�
 ```js
 function Keys() {}
 
-Keys.consumer_key = "[your consumer_key]";
-Keys.consumer_secret = "[your consumer_secret]";
+Keys.consumer_key = "XXXXXXXXXXXXXXXXXXXXXXXXX";
+Keys.consumer_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 ```
 ## 参照したページ
 * [otiai10/kanColleWidget]
