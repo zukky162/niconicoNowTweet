@@ -9,7 +9,10 @@ var oauth = ChromeExOAuth.initBackgroundPage({
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    chrome.tabs.sendMessage(tab.id, {command: "clearTweetText"}, null);
+    if(tab.url.search(/^http:\/\/www.nicovideo.jp\/watch\/.*/) != -1) {
+        chrome.tabs.sendMessage(tab.id, {command: "clearTweetText"}, null);
+        chrome.pageAction.show(tabId);
+    }
 });
 
 var postTweet = function(content, media_id) {
