@@ -9,7 +9,7 @@ function Keys() {}
 Keys.consumer_key = "XXXXXXXXXXXXXXXXXXXXXXXXX";
 Keys.consumer_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 ```
-その後、Google Chromeの拡張機能から、デベロッパーモードのチェックを入れ、「パッケージ化されていない拡張機能を読み込む」ボタンでクローンしたディレクトリを指定してください。この拡張機能を有効にすると、http://www.nicovideo.jp/watch/*にアクセスしているときにURLの横にボタンが出現し、それを押すことで現在再生中の動画の画像を保存したりつぶやいたりすることができます。
+その後、Google Chromeの拡張機能から、デベロッパーモードのチェックを入れ、「パッケージ化されていない拡張機能を読み込む」ボタンでクローンしたディレクトリを指定してください。この拡張機能を有効にすると、`http://www.nicovideo.jp/watch/*`にアクセスしているときにURLの横にボタンが出現し、それを押すことで現在プレイヤーに表示されている画像を保存したりつぶやいたりすることができます。
 ## 参照したページ
 * [What are extensions? - Google Chrome]
   (https://developer.chrome.com/extensions)
