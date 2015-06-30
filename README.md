@@ -1,6 +1,6 @@
 # Niconico Now Tweet
 ##概要
-Google Chromeで現在表示しているニコニコ動画の画面をそのままキャプチャーし、ツイッターに投稿します。モニタサイズのフルスクリーンや、極端に縮小した場合には対応しておりません。
+Google Chromeで現在表示しているニコニコ動画の画面をそのままキャプチャーし、ツイッターに投稿したり、画像を保存することができます。モニタサイズのフルスクリーンや、極端に縮小した場合には対応しておりません。
 ## 使用する場合
 このリポジトリをクローンし、manifest.jsonがある場所に、中身が以下であるようなkeys.jsを作成してください。
 ```js
@@ -9,7 +9,7 @@ function Keys() {}
 Keys.consumer_key = "XXXXXXXXXXXXXXXXXXXXXXXXX";
 Keys.consumer_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 ```
-その後、Google Chromeの拡張機能から、デベロッパーモードのチェックを入れ、「パッケージ化されていない拡張機能を読み込む」ボタンでクローンしたディレクトリを指定してください。この拡張機能を有効にすると、`http://www.nicovideo.jp/watch/*`にアクセスしているときにURLの横にボタンが出現し、それを押すことで現在プレイヤーに表示されている画像を保存したりつぶやいたりすることができます。
+その後、Google Chromeの拡張機能から、デベロッパーモードのチェックを入れ、「パッケージ化されていない拡張機能を読み込む」ボタンでクローンしたディレクトリを指定してください。この拡張機能を有効にすると、`http://www.nicovideo.jp/watch/*`にアクセスしているときにURLの横にボタンが出現し、それを押すことで現在プレイヤーに表示されている画像をツイッターに投稿したり、画像を保存することができます。
 ## 参照したページ
 * [What are extensions? - Google Chrome]
   (https://developer.chrome.com/extensions)
